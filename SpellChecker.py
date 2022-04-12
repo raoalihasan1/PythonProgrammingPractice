@@ -1,18 +1,23 @@
 import sys, os
+
 punctuations = '''!()-’[]{};:'",.?—…'''
 englishtextpath = sys.argv[1]
 inputpath = sys.argv[2]
+
 if inputpath.endswith("/"):
     pass
 else:
     inputpath += "/"
 outputpath = sys.argv[3]  
+
 if outputpath.endswith("/"):
     pass
 else:
     outputpath += "/"
+
 if not os.path.exists(outputpath):
     os.makedirs(outputpath)
+
 for filepath in os.listdir(inputpath):
     if filepath.endswith(".txt"):
         punctuationremoved, uppercaseremoved, numbersremoved, totalwords, correctwords = 0, 0, 0, 0, 0
