@@ -4,22 +4,17 @@ cipherText = ""
 
 Alphabet = "XYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-plaintextPosition = 0
+for eachChar in plainText:
 
-while plaintextPosition < len(plainText):
+    for x in range(len(Alphabet)):
 
-	plaintextChar = plainText[plaintextPosition]
+        if Alphabet[x] == eachChar:
 
-	alphabetPosition = 3
+            cipherText += Alphabet[x - 3]
 
-	while plaintextChar != Alphabet[alphabetPosition]:
+    if eachChar == " ":
 
-		alphabetPosition += 1
+        cipherText += " "
 
-	alphabetPosition -= 3
-
-	cipherText = cipherText + Alphabet[alphabetPosition]
-
-	plaintextPosition += 1
 
 print("The Encrypted String Is " + str(cipherText))
