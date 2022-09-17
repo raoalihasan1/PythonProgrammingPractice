@@ -191,15 +191,15 @@ class Bank:
             "\nEnter Acc. Number: ").upper()
         try:
             getAccount = self.getItem(accountNumber)
+            sleep(0.5)
+            print("\n=================================\n")
+            print("Account Name: {}\nAccount Number: {}\nAccount Balance: £{}\n".format(
+                getAccount.getAccountName(), getAccount.getAccountNumber(), getAccount.getBalance()))
+            print("=================================\n")
         except:
             print("Invalid Account Number. Please Try Again!\n")
+        finally:
             self.displayOptions()
-        sleep(0.5)
-        print("\n=================================\n")
-        print("Account Name: {}\nAccount Number: {}\nAccount Balance: £{}\n".format(
-            getAccount.getAccountName(), getAccount.getAccountNumber(), getAccount.getBalance()))
-        print("=================================\n")
-        self.displayOptions()
 
     def generateAccountNumber(self):
         randomGen = "ABCDEFGHIJKLM01234NOPQRSTUVWXYZ567890"
