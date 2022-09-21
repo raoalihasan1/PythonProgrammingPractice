@@ -1,4 +1,4 @@
-# Write a function that caounts as well as sums up the natural numbers that are divisible by 2 or 7 up to a given maximum value (exclusive)
+# Write a function that counts as well as sums up the natural numbers that are divisible by 2 or 7 up to a given maximum value (exclusive)
 def calcSumAndCountAllNumbersDivBy2or7(maxVal: int):
     Total = 0
     Counter = 0
