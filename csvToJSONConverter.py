@@ -41,24 +41,3 @@ class convert_csv_to_json:
     # Generate document key
     def generate_key(self):
         return (''.join(random.choices(string.ascii_lowercase, k=15))).upper()
-
-
-select_option = None
-file_obj = None
-
-while select_option != "Q":
-    print("CSV To JSON File Converter:")
-    select_option = input("\nPress <E> to Convert Or <Q> To Exit: ").upper()
-    if select_option == "E":
-        file_name = input(
-            "\nEnter The Name Of The CSV File In This Directory To Convert: ")
-        if (os.path.exists(file_name)):
-            file_obj = convert_csv_to_json(file_name)
-            if (file_obj.run_conversion()):
-                print("\n----- CSV SAVED SUCCESSFULLY AS A JSON FILE -----\n")
-            else:
-                print("\n----- FAILED TO CONVERT CSV FILE TO A JSON FILE -----\n")
-        else:
-            print("\n----- NO FILE WITH THIS NAME EXISTS IN THIS DIRECTORY -----\n")
-    elif select_option != "Q":
-        print("\n----- INVALID OPTION SELECTED -----\n")
