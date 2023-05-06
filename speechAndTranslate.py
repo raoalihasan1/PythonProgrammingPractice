@@ -28,7 +28,7 @@ class speechAndTranslate:
             except:
                 print("\nFailed To Save The Text-To-Speech Audio - Please Try Again!\n")
         initEngine.runAndWait()
-        # Synchronise The Program And Saving The File To Prevent Any Errors
+        # Synchronize The Program And Saving The File To Prevent Any Errors
         if (fileName != None):
             while (not os.path.isfile(fileName)):
                 sleep(0.25)
@@ -77,7 +77,7 @@ if __name__ == "__main__":
             continue
         # Instantiate Objects And Call The Respective Methods Based On What The User Wishes To Do
         newObj = speechAndTranslate(getText)
-        if (getLang == None):
+        if (not getLang):
             newObj.convertToSpeech(saveYN)
         else:
             newObj.translateText(getLang)
